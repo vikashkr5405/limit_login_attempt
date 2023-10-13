@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.briztech</groupId>
-	<artifactId>Account_verification</artifactId>
+	<artifactId>limit_login_attempt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Account_verification</name>
 	<description>spring boot account verification project</description>

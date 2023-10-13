@@ -1,4 +1,4 @@
-package com.briztech.Account_verification;
+package com.briztech.limit_login_attempt;
 
 
 
@@ -13,4 +13,11 @@ public interface PersonService
 	
 	public boolean verifyAccount(String verificationCode);
 	
+	public void increaseFailedAttempt(Person person);
+	
+	public void resetAttempt(String email);
+	
+	public void lock(Person person);
+	
+	public boolean unlockAccountTimeExpired(Person person);
 }

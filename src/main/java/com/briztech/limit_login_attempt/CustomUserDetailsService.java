@@ -1,4 +1,4 @@
-package com.briztech.Account_verification;
+package com.briztech.limit_login_attempt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

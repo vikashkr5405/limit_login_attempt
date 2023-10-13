@@ -1,4 +1,4 @@
-package com.briztech.Account_verification;
+package com.briztech.limit_login_attempt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,6 +20,8 @@ public class SecurityConfig
 	@Autowired
 	 private CustomAuthSuccessHandler cusuccessHandler;
 
+	@Autowired
+	public CustomFailureHandler failureHandler;
 
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder()
@@ -57,6 +59,7 @@ public class SecurityConfig
 		.requestMatchers("/admin/**").hasRole("ADMIN")
 		.requestMatchers("/*").permitAll().and()
 		.formLogin().loginPage("/signin").loginProcessingUrl("/userLogin")
+		.failureHandler(failureHandler)
 		.successHandler(cusuccessHandler)
 		.and().logout().permitAll();  
 		   

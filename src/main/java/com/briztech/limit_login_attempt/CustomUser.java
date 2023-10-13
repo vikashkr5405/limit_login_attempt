@@ -1,4 +1,4 @@
-package com.briztech.Account_verification;
+package com.briztech.limit_login_attempt;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -14,6 +14,14 @@ public class CustomUser implements UserDetails {
 
 	public CustomUser(Person person) {
 		super();
+		this.person = person;
+	}
+	
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
 		this.person = person;
 	}
 
@@ -42,9 +50,9 @@ public class CustomUser implements UserDetails {
 	}
 
 	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return true;
+	public boolean isAccountNonLocked() 
+	{
+		return person.isAccountNonLocked;
 	}
 
 	@Override

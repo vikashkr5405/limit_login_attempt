@@ -1,4 +1,6 @@
-package com.briztech.Account_verification;
+package com.briztech.limit_login_attempt;
+
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,8 +21,29 @@ public class Person {
 	String role;
 	boolean enable;
 	String verificationCode;
+	boolean isAccountNonLocked;
+	int failedAttempt;
+	Date lockTime;
+
 	
-	
+	public boolean isAccountNonLocked() {
+		return isAccountNonLocked;
+	}
+	public void setAccountNonLocked(boolean isAccountNonLocked) {
+		this.isAccountNonLocked = isAccountNonLocked;
+	}
+	public int getFailedAttempt() {
+		return failedAttempt;
+	}
+	public void setFailedAttempt(int failedAttempt) {
+		this.failedAttempt = failedAttempt;
+	}
+	public Date getLockTime() {
+		return lockTime;
+	}
+	public void setLockTime(Date lockTime) {
+		this.lockTime = lockTime;
+	}
 	public int getId() {
 		return id;
 	}
